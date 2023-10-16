@@ -7,7 +7,7 @@ ENV PYTHONDONTWRITEBYTECODE=1
 RUN pip3 install --no-cache-dir pyctcdecode webrtcvad setuptools==59.5.0 transformers torch --extra-index-url https://download.pytorch.org/whl/cu116
 RUN cd /tmp && wget https://github.com/Kitware/CMake/releases/download/v3.25.1/cmake-3.25.1-linux-x86_64.tar.gz &&\
     tar -zxvf cmake-3.25.1-linux-x86_64.tar.gz 
-RUN git clone https://github.com/nvidia-riva/riva-asrlib-decoder &&\
+RUN git clone https://github.com/RamanHacks/riva-asrlib-decoder &&\
     cd riva-asrlib-decoder && git submodule update --init --recursive &&\
     mkdir build && cd build &&\
     /tmp/cmake-3.25.1-linux-x86_64/bin/cmake -DRIVA_ASRLIB_BUILD_PYTHON_BINDINGS=NO .. &&\
